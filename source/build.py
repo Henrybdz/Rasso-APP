@@ -104,7 +104,7 @@ home = f'''<section class="hero dark">{ROAD}
   <div class="wrap hero-in">
     <div class="hero-txt">
       {plate("Auto · Moto")}
-      <h1>Tous les chemins<br>mènent au <mark>rasso.</mark></h1>
+      <h1>Tous les chemins<br>mènent à <mark>Rasso.</mark></h1>
       <p class="lead">Trouve les rassemblements près de toi, montre ton garage, rencontre d'autres passionnés et partez rouler en convoi. Tout Rasso tient dans une seule application.</p>
       <div class="cta-row">{cta()}<a class="btn btn-ghost btn-lg" href="#video">Voir la vidéo de 30 s</a></div>
     </div>
