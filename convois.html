@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convois auto et moto : balade en groupe et choix du trajet – Rasso</title>
+<meta name="description" content="Crée un convoi ou rejoins-en un près de toi : point de rendez-vous, départ, destination et type de trajet au choix (virages, autoroute ou équilibré) avec Rasso.">
+<link rel="canonical" href="https://henrybdz.github.io/Rasso-APP/convois.html">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F0F12">
+<meta name="color-scheme" content="dark">
+<meta name="apple-itunes-app" content="app-id=6758964694">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Rasso">
+<meta property="og:title" content="Convois auto et moto : balade en groupe et choix du trajet – Rasso">
+<meta property="og:description" content="Crée un convoi ou rejoins-en un près de toi : point de rendez-vous, départ, destination et type de trajet au choix (virages, autoroute ou équilibré) avec Rasso.">
+<meta property="og:url" content="https://henrybdz.github.io/Rasso-APP/convois.html">
+<meta property="og:image" content="https://henrybdz.github.io/Rasso-APP/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="fonts/archivo-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="index.html" aria-label="Rasso, accueil"><svg class="pin" viewBox="0 0 100 130" aria-hidden="true"><path d="M50,126 C50,126 8,78 8,48 A42,42 0 1 1 92,48 C92,78 50,126 50,126 Z"/><circle cx="50" cy="48" r="17"/></svg><span>RASSO</span></a>
+    <nav class="route-nav" id="nav" aria-label="Navigation principale"><ol><li><a href="index.html"><i aria-hidden="true"></i><span>Départ</span></a></li><li><a href="rassemblements.html"><i aria-hidden="true"></i><span>Rassemblements</span></a></li><li><a href="garage.html"><i aria-hidden="true"></i><span>Garage</span></a></li><li><a href="communaute.html"><i aria-hidden="true"></i><span>Communauté</span></a></li><li><a href="convois.html" aria-current="page"><i aria-hidden="true"></i><span>Convois</span></a></li><li><a href="progression.html"><i aria-hidden="true"></i><span>Progression</span></a></li><li><a href="questions.html"><i aria-hidden="true"></i><span>Questions</span></a></li></ol></nav>
+    <a class="btn btn-lime top-cta" href="https://apps.apple.com/fr/app/rasso/id6758964694" rel="noopener">Télécharger</a>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav"><span class="sr">Menu</span><i></i><i></i><i></i></button>
+  </div>
+</header>
+<main id="contenu">
+<section class="chero dark">
+  <div class="wrap chero-in">
+    <div class="phero-txt"><p class="plate"><i aria-hidden="true">F</i><span>Étape 4 · Convois</span></p><h1>Un départ.<br>Une destination.<br><mark>Votre convoi.</mark></h1><p class="lead">Le convoi, c'est la balade en groupe : un point de rendez-vous, un itinéraire commun, et tout le monde part ensemble.</p></div>
+    <div class="ui route">
+      <svg viewBox="0 0 830 560" role="img" aria-label="Schéma d'un trajet entre un point A et un point B"><g class="grid"><path d="M-20,90 L850,20 M-20,230 L850,160 M-20,370 L850,300 M-20,510 L850,440 M110,-20 L170,580 M330,-20 L390,580 M550,-20 L610,580 M770,-20 L830,580"/></g><path id="trajet" class="trajet" d="M130,450 C 380,480 60,290 340,285 C 620,280 260,130 500,135 C 630,138 600,100 690,100"/><g class="pt"><circle cx="130" cy="450" r="30"/><text x="130" y="463">A</text></g><g class="pt b"><circle cx="690" cy="100" r="30"/><text x="690" y="113">B</text></g></svg>
+      <div class="chips" role="group" aria-label="Type de trajet"><button type="button" class="chip" data-trajet="v" aria-pressed="true">Virages</button><button type="button" class="chip" data-trajet="a" aria-pressed="false">Autoroute</button><button type="button" class="chip" data-trajet="e" aria-pressed="false">Équilibré</button></div>
+      <p class="ui-note" id="trajet-txt" aria-live="polite">Virages : la route qui tourne, pour le plaisir de conduire.</p>
+    </div>
+  </div>
+</section>
+<section class="road-s paper">
+  <div class="wrap road-in">
+    <div class="sec-h"><p class="plate"><i aria-hidden="true">F</i><span>Feuille de route</span></p><h2 class="h2">De l'idée au départ</h2><p>Tu peux lancer ton propre convoi ou en rejoindre un près de toi.</p></div>
+    <ol class="roadmap"><li><b>Le rendez-vous</b><p>Un lieu et une heure pour se retrouver avant de partir.</p></li><li><b>Le départ et la destination</b><p>Tu poses le point A et le point B.</p></li><li><b>Le type de trajet</b><p>Virages, autoroute ou équilibré : le tracé s'adapte à ce que le groupe a envie de rouler.</p></li><li><b>Le convoi</b><p>Tes amis rejoignent, et vous partez ensemble.</p></li></ol>
+  </div>
+</section>
+<section class="charte dark">
+  <div class="wrap charte-in">
+    <div><p class="plate"><i aria-hidden="true">F</i><span>Bon sens</span></p><h2 class="h2">Rouler ensemble, rouler propre</h2></div>
+    <div class="charte-g"><p><b>Pas de course.</b>Un convoi n'est pas une épreuve de vitesse. On roule au rythme du groupe et dans les limites.</p><p><b>Des distances.</b>On garde ses distances de sécurité, on ne force aucun dépassement pour rester groupés.</p><p><b>Le téléphone à l'arrêt.</b>Le trajet se choisit avant de partir, pas en roulant.</p></div>
+  </div>
+</section>
+<section class="next"><div class="wrap next-in"><p>Étape suivante · 5 sur 6</p><a href="progression.html"><span>Progression</span><svg class="arr" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 H36 M26 3 L36 12 L26 21"/></svg></a></div></section>
+</main>
+<footer class="foot dark">
+  <div class="wrap foot-in">
+    <div><a class="brand" href="index.html" aria-label="Rasso, accueil"><svg class="pin" viewBox="0 0 100 130" aria-hidden="true"><path d="M50,126 C50,126 8,78 8,48 A42,42 0 1 1 92,48 C92,78 50,126 50,126 Z"/><circle cx="50" cy="48" r="17"/></svg><span>RASSO</span></a><p class="foot-tag">Tous les chemins y mènent.</p><a class="btn btn-lime " href="https://apps.apple.com/fr/app/rasso/id6758964694" rel="noopener">Télécharger sur l'App Store</a></div>
+    <nav aria-label="Application"><h3>L'application</h3><a href="rassemblements.html">Rassemblements</a><a href="garage.html">Garage</a><a href="communaute.html">Communauté</a><a href="convois.html">Convois</a><a href="progression.html">Progression</a></nav>
+    <nav aria-label="Informations"><h3>Informations</h3><a href="questions.html">Questions fréquentes</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="https://apps.apple.com/fr/app/rasso/id6758964694" rel="noopener">Rasso sur l'App Store</a></nav>
+  </div>
+  <div class="wrap foot-end"><p>© 2026 Rasso. App Store est une marque d'Apple Inc.</p></div>
+</footer>
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/vendor/MotionPathPlugin.min.js" defer></script>
+<script src="js/site.js" defer></script>
+<script src="js/anim.js" defer></script>
+</body>
+</html>
