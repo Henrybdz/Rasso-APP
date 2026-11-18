@@ -125,7 +125,7 @@ home = f'''<section class="hero dark">{ROAD}
       <div class="fl fl-xp" aria-hidden="true"><b>XP</b><i><u></u></i></div>
     </div>
   </div>
-  <div class="wrap"><ul class="hero-facts"><li><b>Auto et moto</b>Une seule communauté</li><li><b>Carte</b>France, Luxembourg, et bientôt d'autres pays</li><li><b>Convois</b>Virages, autoroute ou équilibré</li><li><b>Application</b>Disponible sur iOS, en développement sur Android</li></ul></div>
+  <div class="wrap"><ul class="hero-facts"><li><b>Auto et moto</b>Une seule communauté pour tous les passionnés de mécanique</li><li><b>Carte</b>Disponible en France et au Luxembourg, d'autres pays à venir</li><li><b>Convois</b>Roulez ensemble : virages, autoroute ou trajet équilibré</li><li><b>Application</b>Disponible sur iOS, en développement sur Android</li></ul></div>
 </section>
 
 <section class="bento-s paper">
