@@ -507,3 +507,25 @@ h1 mark{display:inline-block}
 .cvd{stroke:#151617;stroke-width:5;visibility:hidden}
 .fl,.next .arr,.route-nav i{transition:none}
 
+
+/* ---------- rappel Android ---------- */
+.announce{background:var(--lime);color:var(--ink);font-size:.9rem}
+.announce-in{display:flex;align-items:center;justify-content:center;gap:12px;min-height:40px;padding-block:6px;text-align:center}
+.announce p{margin:0}
+.announce b{font-weight:800}
+.announce i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 0 rgba(15,15,18,.45);animation:ping 2s ease-out infinite}
+.dl{display:inline-flex;align-items:center;flex-wrap:wrap;gap:14px}
+.soon{position:relative;display:inline-flex;align-items:center;gap:9px;padding:9px 14px;border-radius:14px;background:#1B1C1E;border:1.5px solid var(--lime);color:#fff;font:700 .88rem/1.2 var(--body);white-space:nowrap}
+.soon::before{content:"";position:absolute;left:-7px;top:50%;width:11px;height:11px;margin-top:-6px;background:#1B1C1E;border-left:1.5px solid var(--lime);border-bottom:1.5px solid var(--lime);transform:rotate(45deg)}
+.soon i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(176,242,10,.6);animation:ping 2s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(176,242,10,.6)}70%,100%{box-shadow:0 0 0 9px rgba(176,242,10,0)}}
+.foot .dl{gap:12px}.foot .soon{font-size:.82rem;padding:8px 12px}
+.next .soon{align-self:flex-start;background:var(--ink);border-color:var(--ink);margin-top:6px}
+.next .soon::before{display:none}
+@media (max-width:560px){
+  .announce{font-size:.82rem}.announce span{display:none}
+  .cta-row .dl,.phero-txt .dl,.ghero-in .dl{width:100%;flex-direction:column;align-items:stretch;gap:12px}
+  .dl .soon{align-self:flex-start}
+  .dl .soon::before{left:22px;top:-7px;margin-top:0;transform:rotate(135deg)}
+  .foot .dl{flex-direction:column;align-items:flex-start}
+}

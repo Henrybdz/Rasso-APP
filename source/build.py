@@ -12,7 +12,8 @@ ARROW = '<svg class="arr" viewBox="0 0 40 24" aria-hidden="true"><path d="M2 12 
 STOPS = [("index.html", "Départ"), ("rassemblements.html", "Rassemblements"), ("garage.html", "Garage"), ("communaute.html", "Communauté"),
          ("convois.html", "Convois"), ("progression.html", "Progression"), ("questions.html", "Questions")]
 def plate(t): return f'<p class="plate"><i aria-hidden="true">F</i><span>{t}</span></p>'
-def cta(cls="btn-lime", txt="Télécharger sur l'App Store"): return f'<a class="btn {cls} btn-lg" href="{STORE}" rel="noopener">{txt}</a>'
+SOON = '<span class="soon" role="note"><i aria-hidden="true"></i>Bientôt sur Android</span>'
+def cta(cls="btn-lime", txt="Télécharger sur l'App Store"): return f'<span class="dl"><a class="btn {cls} btn-lg" href="{STORE}" rel="noopener">{txt}</a>{SOON}</span>'
 def ticks(*li): return '<ul class="ticks">' + "".join(f"<li>{x}</li>" for x in li) + "</ul>"
 
 def head(fn, title, desc, extra=""):
@@ -50,7 +51,8 @@ def head(fn, title, desc, extra=""):
 '''
 def header(fn):
     li = "".join(f'<li><a href="{f}"{" aria-current=\"page\"" if f == fn else ""}><i aria-hidden="true"></i><span>{l}</span></a></li>' for f, l in STOPS)
-    return f'''<header class="top">
+    return f'''<div class="announce" role="note"><div class="wrap announce-in"><i aria-hidden="true"></i><p><b>Rasso arrive bientôt sur Android.</b> <span>En attendant, l'application est disponible sur iPhone.</span></p></div></div>
+<header class="top">
   <div class="wrap top-in">
     <a class="brand" href="index.html" aria-label="Rasso, accueil">{PIN}<span>RASSO</span></a>
     <nav class="route-nav" id="nav" aria-label="Navigation principale"><ol>{li}</ol></nav>
@@ -64,7 +66,7 @@ def nxt(fn):
     i = [f for f, _ in STOPS].index(fn) if fn in dict(STOPS) else -1
     if i < 0: return ""
     if i == len(STOPS) - 1:
-        return f'<section class="next"><div class="wrap next-in"><p>Arrivée</p><a href="{STORE}" rel="noopener"><span>Télécharger Rasso</span>{ARROW}</a></div></section>'
+        return f'<section class="next"><div class="wrap next-in"><p>Arrivée</p><a href="{STORE}" rel="noopener"><span>Télécharger Rasso</span>{ARROW}</a>{SOON}</div></section>'
     f, l = STOPS[i + 1]
     return f'<section class="next"><div class="wrap next-in"><p>Étape suivante · {i + 1} sur {len(STOPS) - 1}</p><a href="{f}"><span>{l}</span>{ARROW}</a></div></section>'
 def footer(fn):
@@ -115,7 +117,7 @@ home = f'''<section class="hero dark">{ROAD}
       <div class="fl fl-xp" aria-hidden="true"><b>XP</b><i><u></u></i></div>
     </div>
   </div>
-  <div class="wrap"><ul class="hero-facts"><li><b>Auto et moto</b>Une seule communauté</li><li><b>Carte de France</b>Corse comprise</li><li><b>Convois</b>Virages, autoroute ou équilibré</li><li><b>iPhone</b>Disponible sur l'App Store</li></ul></div>
+  <div class="wrap"><ul class="hero-facts"><li><b>Auto et moto</b>Une seule communauté</li><li><b>Carte de France</b>Corse comprise</li><li><b>Convois</b>Virages, autoroute ou équilibré</li><li><b>iPhone</b>Disponible sur l'App Store. Android bientôt.</li></ul></div>
 </section>
 
 <section class="bento-s paper">
@@ -331,11 +333,12 @@ FAQ = [("Les rassemblements", [
  ("Les convois et la progression", [
  ("Comment fonctionne un convoi ?", "Un convoi est une balade en groupe avec un point de rendez-vous. Tu choisis un départ, une destination et un type de trajet : virages, autoroute ou équilibré. Tu peux aussi rejoindre un convoi près de toi."),
  ("Comment gagner de l'expérience ?", "Tu gagnes de l'XP en participant à la vie de l'application, par exemple en ajoutant un rasso à tes favoris ou en créant le tien. L'XP fait monter ton niveau, affiché sur ton profil."),
- ("Où télécharger Rasso ?", "Rasso est disponible sur l'App Store pour iPhone.")])]
+ ("Où télécharger Rasso ?", "Rasso est disponible sur l'App Store pour iPhone. La version Android arrive bientôt."),
+ ("Rasso est-il disponible sur Android ?", "Pas encore : la version Android arrive bientôt. En attendant, Rasso est disponible sur iPhone, sur l'App Store.")])]
 fl = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for _, qs in FAQ for q, a in qs]}
 page("questions.html", "Questions fréquentes sur l'application Rasso",
      "Les réponses aux questions sur Rasso : rassemblements auto et moto, création d'un rasso, amis et swipe, rôles, croisements, convois, expérience et téléchargement.",
-f'''<section class="qhero dark"><div class="wrap">{plate("Questions")}<h1>Avant de<br>te <mark>lancer.</mark></h1><p class="lead">Dix réponses courtes pour comprendre Rasso avant de l'installer.</p></div></section>
+f'''<section class="qhero dark"><div class="wrap">{plate("Questions")}<h1>Avant de<br>te <mark>lancer.</mark></h1><p class="lead">Onze réponses courtes pour comprendre Rasso avant de l'installer.</p></div></section>
 <section class="faq paper"><div class="wrap faq-g">{"".join(f'<div class="faq-col"><h2 class="h3">{t}</h2>' + "".join(f"<details{' open' if i == 0 and j == 0 else ''}><summary>{q}</summary><p>{a}</p></details>" for j, (q, a) in enumerate(qs)) + "</div>" for i, (t, qs) in enumerate(FAQ))}</div></section>
 ''', f'<script type="application/ld+json">{json.dumps(fl, ensure_ascii=False)}</script>\n')
 

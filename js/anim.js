@@ -121,6 +121,14 @@
     $$('.chip[data-trajet]').forEach(function (c) { c.addEventListener('click', function () { setTimeout(function () { roule(.1); }, 620); }); });
   }
 
+  /* ---------- rappel Android : la bulle sort du bouton App Store ---------- */
+  $$('.soon').forEach(function (b) {
+    var inHero = !!b.closest('.hero, .phero, .ghero');
+    gsap.from(b, { x: -18, scale: .7, autoAlpha: 0, transformOrigin: '0 50%', duration: .6, ease: 'back.out(2.2)',
+      delay: inHero ? 1.3 : .2, scrollTrigger: inHero ? null : { trigger: b, start: 'top 92%', once: true } });
+  });
+  gsap.from('.announce-in', { y: -12, autoAlpha: 0, duration: .5, ease: OUT });
+
   /* ---------- 6. Bandeau « Étape suivante » ---------- */
   var nx = document.querySelector('.next');
   if (nx) {
