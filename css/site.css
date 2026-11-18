@@ -529,3 +529,6 @@ h1 mark{display:inline-block}
   .dl .soon::before{left:22px;top:-7px;margin-top:0;transform:rotate(135deg)}
   .foot .dl{flex-direction:column;align-items:flex-start}
 }
+
+/* dégradé calé sur la bordure : supprime les liserés aux extrémités des boutons */
+.btn,.sb,.chip{background-origin:border-box}

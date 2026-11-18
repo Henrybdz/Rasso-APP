@@ -16,6 +16,14 @@ SOON = '<span class="soon" role="note"><i aria-hidden="true"></i>Bientôt sur An
 def cta(cls="btn-lime", txt="Télécharger sur l'App Store"): return f'<span class="dl"><a class="btn {cls} btn-lg" href="{STORE}" rel="noopener">{txt}</a>{SOON}</span>'
 def ticks(*li): return '<ul class="ticks">' + "".join(f"<li>{x}</li>" for x in li) + "</ul>"
 
+import hashlib
+def _v():
+    h = hashlib.sha1()
+    for f in ("css/site.css", "js/site.js", "js/anim.js"):
+        try: h.update((OUT / f).read_bytes())
+        except FileNotFoundError: pass
+    return h.hexdigest()[:8]
+V = _v()
 def head(fn, title, desc, extra=""):
     url = DOMAINE + "/" + ("" if fn == "index.html" else fn)
     return f'''<!DOCTYPE html>
@@ -44,7 +52,7 @@ def head(fn, title, desc, extra=""):
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/archivo-italic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/site.css?v={V}">
 {extra}</head>
 <body>
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -84,8 +92,8 @@ def footer(fn):
 <script src="js/vendor/gsap.min.js" defer></script>
 <script src="js/vendor/ScrollTrigger.min.js" defer></script>
 <script src="js/vendor/MotionPathPlugin.min.js" defer></script>
-<script src="js/site.js" defer></script>
-<script src="js/anim.js" defer></script>
+<script src="js/site.js?v={V}" defer></script>
+<script src="js/anim.js?v={V}" defer></script>
 </body>
 </html>
 '''
