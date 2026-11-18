@@ -132,7 +132,7 @@ home = f'''<section class="hero dark">{ROAD}
   <div class="wrap">
     <div class="sec-h">{plate("L'itinéraire")}<h2 class="h2">Cinq étapes pour faire le tour de Rasso</h2></div>
     <div class="bento">
-      <a class="tile t-rasso" href="rassemblements.html">{img("rassemblement.webp", 1100, 618, "")}<div class="tile-b"><span class="num">1</span><h3>Rassemblements</h3><p>La carte de France des rassos, tes filtres, tes favoris, et un bouton pour créer le tien.</p>{ARROW}</div></a>
+      <a class="tile t-rasso" href="rassemblements.html">{img("rassemblement.webp", 1100, 618, "")}<div class="tile-b"><span class="num">1</span><h3>Rassemblements</h3><p>La carte des rassos en France et au Luxembourg, tes filtres, tes favoris, et un bouton pour créer le tien.</p>{ARROW}</div></a>
       <a class="tile t-garage" href="garage.html">{img("garage-principal.webp", 2000, 1124, "")}<div class="tile-b"><span class="num">2</span><h3>Garage</h3><p>Tes véhicules, tes photos, tes vidéos.</p>{ARROW}</div></a>
       <a class="tile t-commu" href="communaute.html"><div class="mini-deck" aria-hidden="true">{img("voiture-coupe.webp", 415, 739, "")}{img("voiture-compacte.webp", 479, 640, "")}</div><div class="tile-b"><span class="num">3</span><h3>Communauté</h3><p>Swipe les garages, ajoute des amis, discutez.</p>{ARROW}</div></a>
       <a class="tile t-convoi" href="convois.html"><svg viewBox="0 0 600 300" aria-hidden="true"><path d="M40,250 C 220,270 20,130 220,130 C 420,130 180,40 360,40 C 470,40 480,60 560,60"/><circle cx="40" cy="250" r="16"/><circle cx="560" cy="60" r="16"/></svg><div class="tile-b"><span class="num">4</span><h3>Convois</h3><p>Un départ, une destination, ton type de trajet.</p>{ARROW}</div></a>
@@ -166,13 +166,13 @@ ld = {"@context": "https://schema.org", "@graph": [
  {"@type": "MobileApplication", "name": "Rasso", "operatingSystem": "iOS", "applicationCategory": "SocialNetworkingApplication", "inLanguage": "fr-FR",
   "description": "Application communautaire auto et moto : carte des rassemblements, garage, découverte et amis, messagerie, convois et progression.", "installUrl": STORE, "downloadUrl": STORE, "publisher": {"@id": DOMAINE + "/#org"}}]}
 page("index.html", "Rasso – L'application des rassemblements auto et moto",
-     "Rasso réunit les passionnés auto et moto : carte des rassemblements en France, garage à partager, découverte et amis, messagerie, convois et progression. Sur l'App Store.",
+     "Rasso réunit les passionnés auto et moto : carte des rassemblements en France et au Luxembourg, garage à partager, découverte et amis, messagerie, convois et progression. Sur l'App Store.",
      home, f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n')
 
 # ============ RASSEMBLEMENTS ============
 rows = [("Rasso du Lac", "Dimanche · 10:00", "Auto · Moto"), ("Youngtimers & Café", "Dimanche · 9:00", "Auto"), ("Sortie des Crêtes", "Samedi · 14:00", "Moto")]
 page("rassemblements.html", "Rassemblements auto et moto près de chez toi – Rasso",
-     "Explore la carte de France des rassemblements auto et moto, filtre par département, garde tes favoris et crée ton propre rasso avec l'application Rasso.",
+     "Explore la carte des rassemblements auto et moto en France et au Luxembourg, filtre par département, garde tes favoris et crée ton propre rasso avec l'application Rasso.",
 f'''<section class="phero dark">{ROAD}
   <div class="wrap phero-in">
     <div class="phero-txt">{plate("Étape 1 · Explorer")}<h1>Trouve ton<br>prochain <mark>rasso.</mark></h1><p class="lead">Un rasso, c'est un rassemblement de passionnés : une rencontre sur un parking, une sortie, un salon, une journée circuit. Rasso les réunit sur une seule carte.</p>{cta()}</div>
@@ -331,7 +331,8 @@ f'''<section class="phero dark">{ROAD}
 # ============ QUESTIONS ============
 FAQ = [("Les rassemblements", [
  ("C'est quoi, un rasso ?", "Un rasso, c'est un rassemblement de passionnés auto ou moto : une rencontre sur un parking, une sortie, un salon, une journée circuit. Dans l'application, chaque rasso a sa fiche avec le lieu, la date et le type de véhicules."),
- ("Comment trouver un rassemblement près de chez moi ?", "Ouvre Explorer : la carte de France affiche les rassemblements. Tu peux aussi filtrer la liste par ton département, par France entière, ou chercher un département par son nom ou son code."),
+ ("Dans quels pays Rasso est-il disponible ?", "Rasso est disponible en France et au Luxembourg. D'autres pays sont à venir."),
+ ("Comment trouver un rassemblement près de chez moi ?", "Ouvre Explorer : la carte affiche les rassemblements en France et au Luxembourg. Tu peux aussi filtrer la liste par ton département, ou chercher un département par son nom ou son code."),
  ("Puis-je créer mon propre rassemblement ?", "Oui. Le bouton Créer te permet de publier ton rasso, et l'espace Gérer mes Rassos regroupe ceux que tu organises."),
  ("Rasso, c'est aussi pour les motos ?", "Oui. Rasso s'adresse aux passionnés auto et moto. Chaque rassemblement indique le type de véhicules concerné.")]),
  ("La communauté", [
@@ -346,7 +347,7 @@ FAQ = [("Les rassemblements", [
 fl = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for _, qs in FAQ for q, a in qs]}
 page("questions.html", "Questions fréquentes sur l'application Rasso",
      "Les réponses aux questions sur Rasso : rassemblements auto et moto, création d'un rasso, amis et swipe, rôles, croisements, convois, expérience et téléchargement.",
-f'''<section class="qhero dark"><div class="wrap">{plate("Questions")}<h1>Avant de<br>te <mark>lancer.</mark></h1><p class="lead">Onze réponses courtes pour comprendre Rasso avant de l'installer.</p></div></section>
+f'''<section class="qhero dark"><div class="wrap">{plate("Questions")}<h1>Avant de<br>te <mark>lancer.</mark></h1><p class="lead">Douze réponses courtes pour comprendre Rasso avant de l'installer.</p></div></section>
 <section class="faq paper"><div class="wrap faq-g">{"".join(f'<div class="faq-col"><h2 class="h3">{t}</h2>' + "".join(f"<details{' open' if i == 0 and j == 0 else ''}><summary>{q}</summary><p>{a}</p></details>" for j, (q, a) in enumerate(qs)) + "</div>" for i, (t, qs) in enumerate(FAQ))}</div></section>
 ''', f'<script type="application/ld+json">{json.dumps(fl, ensure_ascii=False)}</script>\n')
 
