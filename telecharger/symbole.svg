@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="430 350 692 580" width="692" height="580">
+<title>Rasso</title><defs><linearGradient id="g" x1="600" y1="380" x2="960" y2="830" gradientUnits="userSpaceOnUse">
+ <stop offset="0" stop-color="#E4FF5C"/><stop offset=".55" stop-color="#B0F20A"/><stop offset="1" stop-color="#6CB81A"/></linearGradient><mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="1560" height="1508"><rect width="1560" height="1508" fill="#fff"/><path d="M934.8 639 A196 180 0 1 0 621.2 639 L772.31 824.03 Q778 833 783.69 824.03 Z" fill="#000" stroke="#000" stroke-width="44" stroke-linejoin="round" clip-path="url(#back)"/></mask><clipPath id="back"><rect x="0" y="0" width="1560" height="819"/></clipPath></defs>
+<path d="M460 819 a318 76 0 1 1 636 0 a318 76 0 1 1 -636 0 Z M533 815 a245 50 0 1 0 490 0 a245 50 0 1 0 -490 0 Z" fill="url(#g)" fill-rule="evenodd" mask="url(#m)"/>
+<path d="M934.8 639 A196 180 0 1 0 621.2 639 L772.31 824.03 Q778 833 783.69 824.03 Z M686 531 a92 92 0 1 0 184 0 a92 92 0 1 0 -184 0 Z" fill="url(#g)" fill-rule="evenodd"/>
+</svg>
